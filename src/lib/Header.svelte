@@ -19,16 +19,16 @@ const popupCombobox: PopupSettings = {
 
 <header class ="flex justify-between">
     <div>
-        <h1 class="text-4xl mb-2 text-surface-700">
+        <h1 class="text-2xl lg:text-4xl mb-2 text-surface-700">
             Good {period}
         </h1>
-        <h2 class="text-surface-600/50">
+        <h2 class="text-m text-surface-600/50">
             {dayjs().format(' dddd D MMMM YYYY')}
         </h2>
     </div>
     
-<button class="btn variant-filled w-48 h-fit py-4 justify-between 
- rounded-2xl  bg-surface-400" 
+<button class="btn variant-filled w-32 px-3 h-fit py-4 justify-between 
+   bg-surface-400" 
 use:popup={popupCombobox}>
 
 	<span class="capitalize !m-0">{comboboxValue }</span>
