@@ -1,11 +1,14 @@
 <script lang="ts">
     import {ListBox,ListBoxItem,popup, type PopupSettings} from "@skeletonlabs/skeleton";
-	import dayjs from 'dayjs'
+	import dayjs from 'dayjs';
+	import{filter}from "$lib/stores/filter";
+
 
 	let period = dayjs().format('a')=='pm'? 'Evening':'morning';
 
+
     
-let comboboxValue: string = ' tasks';
+
 
 
 const popupCombobox: PopupSettings = {
@@ -13,6 +16,7 @@ const popupCombobox: PopupSettings = {
 	target: 'popupCombobox',
 	placement: 'bottom', 
 	closeQuery: '.listbox-item'
+	
 };
 				
 </script>
@@ -31,17 +35,24 @@ const popupCombobox: PopupSettings = {
    bg-surface-400" 
 use:popup={popupCombobox}>
 
-	<span class="capitalize !m-0">{comboboxValue }</span>
+	<span >{$filter }</span>
 
-	<span class="w-6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg></span>
+	<span class="!m-0">
+		<svg 
+		class="w-6"
+		xmlns="http://www.w3.org/2000/svg" 
+		viewBox="0 0 24 24"
+		><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"
+			/></svg>
+	</span>
 </button>
 
 
 <div class="card w-48 shadow-xl py-2" data-popup="popupCombobox">
 	<ListBox rounded="rounded-none" >
-		<ListBoxItem bind:group={comboboxValue} name="medium" value="All tasks">
+		<ListBoxItem bind:group={$filter} name="medium" value="All tasks">
             All tasks</ListBoxItem>
-		<ListBoxItem bind:group={comboboxValue} name="medium" value="Today's tasks">
+		<ListBoxItem bind:group={$filter} name="medium" value="Today's tasks">
             Today's tasks</ListBoxItem>
 		
 	</ListBox>
