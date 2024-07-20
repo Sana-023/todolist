@@ -1,9 +1,5 @@
-<script lang='ts'>
-    import Button from "$lib/components/ui/button/button.svelte";
+<script lang="ts">
+    import Navbar from "$lib/components/Navbar.svelte";
 
 </script>
 
-<Button href="/contact" variant="link" >
-    Contact
-    
-    </Button>
