@@ -2,15 +2,16 @@
     import Button from "./ui/button/button.svelte";
     import { page } from "$app/stores";
     import * as Sheet from "$lib/components/ui/sheet";
+    import ThemeSwitch from "./ThemeSwitch.svelte";
 
-    const links =[
+    const links = [
         {
             text: "About me",
             href: "/",
         },
         {
             text: "Resume",
-            href: "/resume"  
+            href: "/resume",
         },
         {
             text: "Projects",
@@ -20,71 +21,66 @@
             text: "Contact",
             href: "/contact",
         },
-
     ];
 
-    let isSheetOpen =false;
-
-
-
-
+    let isSheetOpen = false;
 </script>
 
-
-
-<div class="w-[100dvw] bg-secondary text-secondary-foreground py-8 px-6 ">
-    <nav class=" max-w-screen-2xl flex justify-between items-center mx-auto ">
-    <div class="flex items-center gap-2">
-        <div class="bg-primary w-4 h-4 me-4" />
-        <div class="flex items-end gap-1">
-
-            <span class="font-bold text-3xl"> Sana Meshal </span>
-        <span class="text-xl uppercase"> / Student </span>
+<div class=" bg-secondary text-secondary-foreground py-8 px-6">
+    <nav class=" max-w-screen-2xl flex justify-between items-center mx-auto">
+        <div class="flex items-center gap-2">
+            <div class="bg-primary w-4 h-4 me-4" />
+            <div class="flex items-end gap-1">
+                <span class="font-bold text-3xl"> Sana Meshal </span>
+                <span class="text-xl uppercase"> / Student </span>
+            </div>
         </div>
-    </div>
- 
-   <div>
-    <div class="uppercase hidden md:flex">
-        {#each links as link}
- 
-        <Button 
-        class=" {$page.url.pathname == link.href && 'text-primary'}" 
-        href={link.href}
-        variant="link">{link.text}</Button>
- 
-         
-        {/each}
-         
-     </div>
-    
 
-     <Sheet.Root bind:open={isSheetOpen} >
-        <Sheet.Trigger class="flex md:hidden">
-<Button  variant="ghost" size="icon">
-        <svg class="h-6 w-6 text-primary " xmlns="http://www.w3.org/2000/svg" 
-        
-        viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h14v2H7zm0 8v-2h14v2zM4 4.5A1.5 1.5 0 0 1 5.5 6A1.5 1.5 0 0 1 4 7.5A1.5 1.5 0 0 1 2.5 6A1.5 1.5 0 0 1 4 4.5m0 6A1.5 1.5 0 0 1 5.5 12A1.5 1.5 0 0 1 4 13.5A1.5 1.5 0 0 1 2.5 12A1.5 1.5 0 0 1 4 10.5M7 19v-2h14v2zm-3-2.5A1.5 1.5 0 0 1 5.5 18A1.5 1.5 0 0 1 4 19.5A1.5 1.5 0 0 1 2.5 18A1.5 1.5 0 0 1 4 16.5"/></svg>
-     </Button>
-        </Sheet.Trigger>
-        <Sheet.Content class="flex flex-col justify-center ">
-            {#each links as link}
- 
-            <Button 
-            class="text-md {$page.url.pathname == link.href && 'text-primary'}" 
-            href={link.href}
-            variant="link"
-            on:click={()=> isSheetOpen= false}
-            
-            >{link.text}
-        
-        
-        </Button>
-     
-             
-            {/each}  
-       
-        </Sheet.Content>
-      </Sheet.Root>
-   </div>
-</nav>
+        <div class="flex">
+             <ThemeSwitch/>
+
+            <!-- Large screen -->
+            <div class="uppercase hidden lg:flex">
+                {#each links as link}
+                    <Button
+                        class=" {$page.url.pathname == link.href &&
+                            'text-primary'}"
+                        href={link.href}
+                        variant="link">{link.text}</Button
+                    >
+                {/each}
+            </div>
+
+            <!--Small screen  -->
+            <Sheet.Root bind:open={isSheetOpen}>
+                <Sheet.Trigger class="flex lg:hidden">
+                    <Button variant="ghost" size="icon">
+                        <svg
+                            class="h-6 w-6 text-primary"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            ><path
+                                fill="currentColor"
+                                d="M7 5h14v2H7zm0 8v-2h14v2zM4 4.5A1.5 1.5 0 0 1 5.5 6A1.5 1.5 0 0 1 4 7.5A1.5 1.5 0 0 1 2.5 6A1.5 1.5 0 0 1 4 4.5m0 6A1.5 1.5 0 0 1 5.5 12A1.5 1.5 0 0 1 4 13.5A1.5 1.5 0 0 1 2.5 12A1.5 1.5 0 0 1 4 10.5M7 19v-2h14v2zm-3-2.5A1.5 1.5 0 0 1 5.5 18A1.5 1.5 0 0 1 4 19.5A1.5 1.5 0 0 1 2.5 18A1.5 1.5 0 0 1 4 16.5"
+                            /></svg
+                        >
+                    </Button>
+                </Sheet.Trigger>
+                <Sheet.Content class="flex flex-col justify-center ">
+                    {#each links as link}
+                        <Button
+                            class="text-md {$page.url.pathname == link.href &&
+                                'text-primary'}"
+                            href={link.href}
+                            variant="link"
+                            on:click={() => (isSheetOpen = false)}
+                            >{link.text}
+                        </Button>
+                    {/each}
+                </Sheet.Content>
+            </Sheet.Root>
+
+           
+        </div>
+    </nav>
 </div>
