@@ -3,6 +3,7 @@
     import { page } from "$app/stores";
     import * as Sheet from "$lib/components/ui/sheet";
     import ThemeSwitch from "./ThemeSwitch.svelte";
+    import Title from "$lib/components/Title.svelte";
 
     const links = [
         {
@@ -29,9 +30,9 @@
 <header class=" bg-secondary text-secondary-foreground py-8 px-6">
     <nav class=" max-w-screen-2xl flex justify-between items-center mx-auto ">
         <a href="/" class="flex items-center gap-2">
-            <div class="bg-primary w-4 h-4 me-4" />
+           
             <div class="flex items-end gap-1">
-                <span class="font-bold text-3xl "> Sana Meshal </span>
+                <Title title="Sana Meshal " class="text-3xl" />
                 <span class="text-xl uppercase hidden sm:flex"> / Student </span>
             </div>
         </a>

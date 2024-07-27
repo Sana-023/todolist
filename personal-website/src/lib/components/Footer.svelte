@@ -17,9 +17,7 @@
              <span class="font-bold ">Email</span> 
              <a href="mailto:snoo6586@gmail.com">snoo6586@gmail.com</a> 
           </span>
-          <span class="flex items-end hidden md:flex " >            
-             <SocialMedia />
-          </span>
+          
        </div>
     </div>
 </footer>
