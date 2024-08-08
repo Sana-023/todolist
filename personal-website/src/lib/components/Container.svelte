@@ -3,7 +3,7 @@
 
 
 
-     let className: string;
+     let className: string="";
 
     export {className as class};
 
