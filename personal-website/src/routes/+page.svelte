@@ -44,11 +44,9 @@
             </div>
             <div class="flex flex-col gap-3">
                 <p>
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur dolore, officia temporibus sunt a impedit rem ea aperiam minima odio mollitia. Aliquid facilis, tempore delectus quod dicta doloribus dolore.
+                 Software Engineering student at the College of Computers at Umm Al-Qura University.Interested in field front end developer.
                 </p>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quo saepe ullam aperiam iste quibusdam voluptatum est, delectus reiciendis dolorum eaque soluta recusandae, repudiandae, incidunt sit cupiditate minus commodi pariatur.
-                </p>
+                
             </div>
         </div>
     </div>

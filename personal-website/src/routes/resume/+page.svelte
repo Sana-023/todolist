@@ -16,11 +16,11 @@
             <Button class="rounded-3xl text-md"> Download CV</Button>
         </div>
         <ResumeCard 
-        data="2023 - 2026" 
+        data ="2023 - present" 
         title="Software Engineering Bachelor" 
         company="Umm Al-Qura University">
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deleniti distinctio nemo eum. Sint, dolor praesentium porro ea pariatur amet similique, saepe adipisci, dolorum cum modi? Ut ipsam distinctio ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deleniti distinctio nemo eum.
+        
 
         </ResumeCard> 
 

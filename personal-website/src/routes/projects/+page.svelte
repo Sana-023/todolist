@@ -2,6 +2,7 @@
     import Container from "$lib/components/Container.svelte";
     import Title from "$lib/components/Title.svelte";
     import ProjectCard from "$lib/components/ProjectCard.svelte";
+    import Button from "$lib/components/ui/button/button.svelte";
      
 
 </script>
@@ -14,7 +15,7 @@
      subtitle="Calculating simple equations" 
      imageSrc= "/project1.png">
     
-     <ul class="list-disc ps-2 ">
+     <ul class="list-disc ps-2  ">
         <li>
             Clear and simple design: Displays numbers and results in a clear and easy-to-read manner.
         </li>
@@ -23,11 +24,28 @@
 
         </li>
         
-        <li>
+        <li >
             No Complexity: Designed only for simple calculations. 
         </li>
+    
      </ul>
+     
+     <a class=" text-4xl" href="https://velvety-cucurucho-698df7.netlify.app/" target="_blank" >
+        <Button class=" rounded-2xl w-20">Try it!</Button>
+    </a>
+
+     
+
+         
+     
+
+   
+
+   
     </ProjectCard>
+
+
+    
 
     <ProjectCard 
     title="To-Do List "
@@ -44,6 +62,10 @@
         </li>
         
      </ul>
+
+     <a class=" text-4xl" href="https://todolistsana.netlify.app/" target="_blank" >
+        <Button class=" rounded-2xl w-20">Try it!</Button>
+    </a>
     </ProjectCard>
 
 
